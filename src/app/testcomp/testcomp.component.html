@@ -1,0 +1,38 @@
+<p>
+  testcomp kom!
+</p>
+<input [id] ="myId" type="text" value="KomandoS">
+<input [id] ="myId" [disabled]="false" type="text" value="KomandoS">
+<h2 class="text-special text-success" >Mokswa Za Nami</h2>
+<h2 [class]="successClass">Mokswa Za Nami</h2>
+<h2 [class.text-danger]="hasError">Mokswa Za Nami</h2>
+<h2 [ngClass]="messageClasses">Mokswa Za Nami</h2>
+<h2 [style.color]="hasError ?'red':'blue'">Mokswa Za Nami</h2>
+<button (click)="onClick($event)">Swelamat</button>
+{{greeting}}
+<input #myText type="text">
+<button (click)="logMessage(myText.value)">Log</button>
+<input [(ngModel)]="name" type="text">
+{{name}}
+
+<!--Ng If-->
+<div *ngIf="displayname; then thenBlock; else elseBlock"></div>
+<ng-template #thenBlock>
+  <h2>Parakomando</h2>
+</ng-template>
+<ng-template #elseBlock>
+  <h2>Baret Merah</h2>
+</ng-template>
+
+<!-- NgSwitch-->
+<div [ngSwitch]="color">
+  <div *ngSwitchCase="'red'">Pilih Merah</div>
+  <div *ngSwitchCase="'blue'">Pilih Biru</div>
+  <div *ngSwitchCase="'green'">Pilih Hijau</div>
+  <div *ngSwitchDefault>Pilih Yang bener</div>
+</div>
+
+<!--ng for-->
+<div *ngFor="let color of colors; index as i;last as l;odd as o">
+  <h4>{{i}} {{l}} {{o}} {{color}}</h4>
+</div>
